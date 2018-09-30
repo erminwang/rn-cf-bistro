@@ -11,6 +11,9 @@ export const comments = (state = {
             case ActionTypes.COMMENTS_FAILED:
                 return {...state, errMess: action.payload, comments: []};
 
+            case ActionTypes.POST_COMMENT:
+                return {...state, errMess: null, comments: [...state.comments, action.payload]}
+
             default:
                 return state;
         }

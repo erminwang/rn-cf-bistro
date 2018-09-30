@@ -32,6 +32,11 @@ export const addComments = (comments) => ({
     payload: comments
 });
 
+export const postComment = (newComment) => ({
+    type: ActionTypes.POST_COMMENT,
+    payload: newComment
+})
+
 //--------------------Dishes-------------------------
 
 export const fetchDishes = () => (dispatch) => {
