@@ -46,6 +46,7 @@ export const fetchDishes = () => (dispatch) => {
                 throw error;
             }
         }, error => {
+            console.log("Error: " + error);
             var errMess = new Error(error.message);
             throw errMess;
         })
@@ -139,3 +140,22 @@ export const addLeaders = (leaders) => ({
     type: ActionTypes.ADD_LEADERS,
     payload: leaders
 });
+
+//--------------------Favorites-------------------------
+export const postFavorite = (dishId) => (dispatch) => {
+    setTimeout(() => {
+        dispatch(addFavorite(dishId));
+    }, 2000);
+}
+
+export const addFavorite = (dishId) => ({
+    type: ActionTypes.ADD_FAVORITE,
+    payload: dishId
+})
+
+// export const addFavorite = (dishId) => {
+//     return {
+//         type: ActionTypes.ADD_FAVORITE,
+//         payload: dishId
+//     }
+// }
